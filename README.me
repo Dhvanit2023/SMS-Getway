@@ -1,12 +1,12 @@
-# 📲 Android SMS Gateway API (Free & Self-Hosted)
+📲 Android SMS Gateway API (Free & Self-Hosted)
 
 A powerful and lightweight **SMS Gateway system** that allows you to send SMS messages using your own Android device via a REST API.
 
 This project eliminates the need for paid SMS services by converting your mobile device into a personal SMS server.
 
----
 
-## 🚀 Key Features
+
+🚀 Key Features
 
 * 📡 Send SMS via REST API
 * 📱 Uses your own Android device (SIM-based messaging)
@@ -15,124 +15,123 @@ This project eliminates the need for paid SMS services by converting your mobile
 * ⚡ Fast, simple, and free to use
 * 🔄 OTP and transactional message support
 
----
 
-## 🏗️ System Architecture
+
+🏗️ System Architecture
 
 Android App (SMS Sender) ↔ Local Server (API) ↔ Zrok (Public URL)
 
----
 
-## 📦 Components
 
-### 1. Android App
+📦 Components
+
+1. Android App
 
 * Sends SMS using device SIM
 * Runs in background
 * Receives API requests from server
 
-### 2. Backend Server
+2. Backend Server
 
 * Handles API requests
 * Processes SMS sending
 * Connects with Android app
 
-### 3. Zrok Tunnel
+3. Zrok Tunnel
 
 * Converts local URL into public URL
 * Allows global access to your API
 
----
 
-## 🛠 Tech Stack
+
+🛠 Tech Stack
 
 * Backend: Python (FastAPI / Flask)
 * Mobile App: Android (Java / Kotlin)
 * Tunnel: Zrok
 
----
 
-## ⚙️ Setup Guide
 
-### 1. Start Backend Server
+⚙️ Setup Guide
 
-```bash
-python main.py
-```
+1. Start Backend Server
 
----
+python main.py or other sever
 
-### 2. Start Zrok Tunnel in using termux on android
 
-```bash
+
+
+2. Start Zrok Tunnel in using termux on android
+
+
 zrok share reserved YOUR_TOKEN
-```
+
 
 You will get a public URL like:
 
-```
+
 https://your-id.share.zrok.io
-```
 
----
 
-### 3. Connect Android App
+
+
+3. Connect Android App
 
 * Install APK on your device
 * Allow SMS & background permissions
 * Enter your server URL
 
----
 
-## 📡 API Usage
 
-### Send SMS
+📡 API Usage
 
-**Endpoint:**
+Send SMS
 
-```
+Endpoint:
+
+
 POST /send-sms
-```
 
-**Request Body:**
 
-```json
+Request Body:
+
+
 {
   "key": "API",=>set by me in Android code
   "phone": "9876543210",
   "message": "Your OTP is 1234"
 }
-```
 
-**Response:**
 
-```json
+Response:
+
+json
 {
   "status": "sent"
 }
-```
 
----
 
-## 🧪 CURL Example
 
-```bash
+
+🧪 CURL Example
+
+bash
 curl -X POST https://your-url/send-sms \
 -H "Content-Type: application/json" \
 -d '{"key":"12345","phone":"9876543210","message":"Hello"}'
-```
 
----
 
-## 🔐 Security Notes
+
+
+🔐 Security Notes
 
 * Use API key to prevent unauthorized access
 * Do not expose your endpoint publicly without protection
 * Avoid spam or illegal usage
 
----
 
-## ⚠️ Disclaimer
+
+⚠️ Disclaimer
 
 This project is intended for:
 
@@ -145,26 +144,27 @@ Do NOT use this system for:
 * Spam messaging
 * Fraud or illegal activities
 
----
 
 
 
-## 📌 Future Improvements
+
+
+📌 Future Improvements
 
 * Rate limiting
 * Delivery status tracking
 * Web dashboard
 * Multi-device support
 
----
 
-## 👨‍💻 Author
+
+👨‍💻 Author
 
 Your Name
 GitHub: https://github.com/Dhvanit2023
 
----
 
-## ⭐ Support
+
+⭐ Support
 
 If you like this project, give it a ⭐ on GitHub!
